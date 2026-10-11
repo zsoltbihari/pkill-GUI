@@ -1,59 +1,5 @@
 # pkill-GUI
 
-**Magyar / English**
-
-Könnyű, PySide6-alapú Linuxos folyamatkezelő, amely a rendszer tálcájáról nyitható meg. A program X11/XWayland környezethez készült.
-
-A projekt jelenlegi állapotban fejlesztés alatt áll. A funkciók és a működés a tesztelés során változhatnak.
-
-## Magyar
-
-### Funkciók
-
-- Rendszertálca-ikon és lenyitható folyamatmenü.
-- Két listázási mód: a látható grafikus ablakok folyamatai, vagy az összes, a rendszerből lekérdezhető folyamat.
-- Felhasználónkénti összesítő nézet: az összesített CPU-terhelés és a folyamatok száma látható; egy felhasználóra kattintva megnyílik a részletes listája.
-- Folyamatonkénti CPU-terhelés kijelzése, konfigurálható CPU-sávokkal.
-- PID, folyamatnév, parancssor és folyamatállapot megtekintése.
-- Folyamatokhoz tartozó szálak megjelenítése.
-- Normál ablakbezárás, illetve folyamatleállítás Linux-jelzésekkel, például `SIGTERM` és `SIGKILL`.
-- Frissítési időköz, megerősítési kérdések és színpaletták beállítása.
-- Fülekre bontott beállítópanel és a támogatott Linux/POSIX jelek leírása.
-
-### Követelmények
-
-- Linux grafikus munkamenet X11 vagy XWayland támogatással
-- Python 3
-- PySide6
-- `procps` (`ps` parancs)
-- `xdotool` és `xprop` a látható ablakok módjához
-
-Debian és AV Linux alapú rendszeren a rendszerfüggőségek telepítése:
-
-```bash
-sudo apt update
-sudo apt install python3 python3-pyside6.qtwidgets procps xdotool x11-utils
-```
-
-Ha a disztribúció csomagja nem biztosítja a PySide6-ot, telepítsd a PySide6-ot a disztribúciód által ajánlott módszerrel vagy a Python-környezetedhez tartozó csomagkezelővel.
-
-### Indítás
-
-Mentsd a programfájlt például `pkill-GUI.py` néven, majd futtasd:
-
-```bash
-python3 pkill-GUI.py
-```
-
-A program a rendszer tálcáján jelenik meg. A tálca megjelenése a használt asztali környezettől és annak tálcabeállításaitól is függ.
-
-### Fontos tudnivalók
-
-- Az összes folyamat listázása nem jelent automatikusan rendszergazdai jogosultságot. Egy normál felhasználó által indított program nem feltétlenül tud más felhasználó vagy a `root` folyamataiba beavatkozni.
-- A folyamat CPU-értéke egy CPU-mag teljes kihasználásához viszonyított érték; ezért több folyamat összege, illetve egy többmagos rendszer terhelése meghaladhatja a 100%-ot.
-- A `SIGKILL` azonnal megszakítja a folyamatot, ezért adatvesztést okozhat. Először lehetőleg normál bezárást vagy `SIGTERM` jelzést használj.
-- A programot a saját Linux-rendszereden teszteld, mielőtt fontos folyamatok kezelésére használnád.
-
 ## English
 
 A lightweight Linux process manager built with PySide6 and accessible from the system tray. It is designed for X11/XWayland graphical sessions.
@@ -109,3 +55,59 @@ The application appears in the system tray. Tray availability and appearance dep
 ## License
 
 No license has been selected yet. Unless a license is added to this repository, the default copyright rules apply and others do not automatically receive permission to redistribute or modify the code.
+
+
+-------------------------------------
+
+
+Könnyű, PySide6-alapú Linuxos folyamatkezelő, amely a rendszer tálcájáról nyitható meg. A program X11/XWayland környezethez készült.
+
+A projekt jelenlegi állapotban fejlesztés alatt áll. A funkciók és a működés a tesztelés során változhatnak.
+
+## Magyar
+
+### Funkciók
+
+- Rendszertálca-ikon és lenyitható folyamatmenü.
+- Két listázási mód: a látható grafikus ablakok folyamatai, vagy az összes, a rendszerből lekérdezhető folyamat.
+- Felhasználónkénti összesítő nézet: az összesített CPU-terhelés és a folyamatok száma látható; egy felhasználóra kattintva megnyílik a részletes listája.
+- Folyamatonkénti CPU-terhelés kijelzése, konfigurálható CPU-sávokkal.
+- PID, folyamatnév, parancssor és folyamatállapot megtekintése.
+- Folyamatokhoz tartozó szálak megjelenítése.
+- Normál ablakbezárás, illetve folyamatleállítás Linux-jelzésekkel, például `SIGTERM` és `SIGKILL`.
+- Frissítési időköz, megerősítési kérdések és színpaletták beállítása.
+- Fülekre bontott beállítópanel és a támogatott Linux/POSIX jelek leírása.
+
+### Követelmények
+
+- Linux grafikus munkamenet X11 vagy XWayland támogatással
+- Python 3
+- PySide6
+- `procps` (`ps` parancs)
+- `xdotool` és `xprop` a látható ablakok módjához
+
+Debian és AV Linux alapú rendszeren a rendszerfüggőségek telepítése:
+
+```bash
+sudo apt update
+sudo apt install python3 python3-pyside6.qtwidgets procps xdotool x11-utils
+```
+
+Ha a disztribúció csomagja nem biztosítja a PySide6-ot, telepítsd a PySide6-ot a disztribúciód által ajánlott módszerrel vagy a Python-környezetedhez tartozó csomagkezelővel.
+
+### Indítás
+
+Mentsd a programfájlt például `pkill-GUI.py` néven, majd futtasd:
+
+```bash
+python3 pkill-GUI.py
+```
+
+A program a rendszer tálcáján jelenik meg. A tálca megjelenése a használt asztali környezettől és annak tálcabeállításaitól is függ.
+
+### Fontos tudnivalók
+
+- Az összes folyamat listázása nem jelent automatikusan rendszergazdai jogosultságot. Egy normál felhasználó által indított program nem feltétlenül tud más felhasználó vagy a `root` folyamataiba beavatkozni.
+- A folyamat CPU-értéke egy CPU-mag teljes kihasználásához viszonyított érték; ezért több folyamat összege, illetve egy többmagos rendszer terhelése meghaladhatja a 100%-ot.
+- A `SIGKILL` azonnal megszakítja a folyamatot, ezért adatvesztést okozhat. Először lehetőleg normál bezárást vagy `SIGTERM` jelzést használj.
+- A programot a saját Linux-rendszereden teszteld, mielőtt fontos folyamatok kezelésére használnád.
